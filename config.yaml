@@ -1,0 +1,51 @@
+usingApiKey: false
+
+##########################
+#####  Collections   #####
+##########################
+collections:
+  - name: loginHistory
+
+##########################
+##### Customizations #####
+##########################
+
+##
+## Caching Options
+##
+cachingOptions: "maximumSize=200,expireAfterWrite=2m"
+
+# The string syntax is a series of comma-separated keys or key-value pairs\
+#
+# concurrencyLevel=[integer]: sets CacheBuilder.concurrencyLevel.
+# initialCapacity=[integer]: sets CacheBuilder.initialCapacity.
+# maximumSize=[long]: sets CacheBuilder.maximumSize.
+# maximumWeight=[long]: sets CacheBuilder.maximumWeight.
+# expireAfterAccess=[duration]: sets CacheBuilder.expireAfterAccess(long, java.util.concurrent.TimeUnit).
+# expireAfterWrite=[duration]: sets CacheBuilder.expireAfterWrite(long, java.util.concurrent.TimeUnit).
+# refreshAfterWrite=[duration]: sets CacheBuilder.refreshAfterWrite(long, java.util.concurrent.TimeUnit).
+# weakKeys: sets CacheBuilder.weakKeys().
+# softValues: sets CacheBuilder.softValues().
+# weakValues: sets CacheBuilder.weakValues().
+# recordStats: sets CacheBuilder.recordStats().
+#
+# Durations are represented by an integer, followed by one of "d", "h", "m", or "s",
+# representing days, hours, minutes, or seconds respectively. (There is currently no
+# syntax to request expiration in milliseconds, microseconds, or nanoseconds.)
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+
+    # Sets the level for 'com.example.app' to DEBUG.
+    com.example.app: DEBUG
+
+    org.hibernate.SQL: ALL
+
+  appenders:
+    - type: console
