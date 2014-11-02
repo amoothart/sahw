@@ -16,7 +16,7 @@ public class LoginHistoryDataAccess implements InternalDataAccess<InternalLoginH
     }
 
     @Override
-    public ResultSet<InternalLoginHistory> insertData(InternalLoginHistory data) {
+    public ResultSet<InternalLoginHistory> insertData(InternalLoginHistory data, Soap port) {
         return null;
     }
 

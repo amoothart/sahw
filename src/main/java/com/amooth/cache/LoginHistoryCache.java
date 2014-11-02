@@ -67,7 +67,7 @@ public class LoginHistoryCache {
         return internalLoginHistories;
     }
 
-    public ResultSet<InternalLoginHistory> getData(Soap port) {
+    public ResultSet<InternalLoginHistory> getData(final Soap port) {
         List<InternalLoginHistory> internalLoginHistories = new ArrayList<InternalLoginHistory>();
         ResultStatus resultStatus;
 

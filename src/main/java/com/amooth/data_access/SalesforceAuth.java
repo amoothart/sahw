@@ -4,8 +4,8 @@ import com.sforce.soap.enterprise.Login;
 import com.sforce.soap.enterprise.LoginResponse;
 import com.sforce.soap.enterprise.SessionHeader;
 import com.sforce.soap.enterprise.Soap;
-import com.sun.xml.internal.ws.api.message.Headers;
-import com.sun.xml.internal.ws.developer.WSBindingProvider;
+import com.sun.xml.ws.api.message.Headers;
+import com.sun.xml.ws.developer.WSBindingProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

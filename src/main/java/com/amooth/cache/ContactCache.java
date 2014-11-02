@@ -35,7 +35,7 @@ public class ContactCache {
         this.cache = CacheBuilder.from(cacheOptions).build();
     }
 
-    public ResultSet<InternalContact> getContactByFirstName(ContactContext context, Soap port) {
+    public ResultSet<InternalContact> getContactByFirstName(final ContactContext context, final Soap port) {
         List<InternalContact> internalContacts = new ArrayList<InternalContact>();
         ResultStatus resultStatus;
 
