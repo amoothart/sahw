@@ -1,6 +1,6 @@
 package com.amooth.models;
 
-import java.util.Date;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 public class InternalLoginHistory {
     private final String id;
@@ -9,15 +9,15 @@ public class InternalLoginHistory {
     private final String application;
     private final String browser;
     private final String clientVersion;
-    private final Date loginTime;
+    private final XMLGregorianCalendar loginTime;
     private final String loginType;
     private final String loginUrl;
     private final String platform;
     private final String sourceIp;
     private final String status;
-    private final int userId;
+    private final String userId;
 
-    public InternalLoginHistory(String id, String apiType, String apiVersion, String application, String browser, String clientVersion, Date loginTime, String loginType, String loginUrl, String platform, String sourceIp, String status, int userId) {
+    public InternalLoginHistory(String id, String apiType, String apiVersion, String application, String browser, String clientVersion, XMLGregorianCalendar loginTime, String loginType, String loginUrl, String platform, String sourceIp, String status, String userId) {
         this.id = id;
         this.apiType = apiType;
         this.apiVersion = apiVersion;
@@ -31,6 +31,25 @@ public class InternalLoginHistory {
         this.sourceIp = sourceIp;
         this.status = status;
         this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "InternalLoginHistory{" +
+                "id='" + id + '\'' +
+                ", apiType='" + apiType + '\'' +
+                ", apiVersion='" + apiVersion + '\'' +
+                ", application='" + application + '\'' +
+                ", browser='" + browser + '\'' +
+                ", clientVersion='" + clientVersion + '\'' +
+                ", loginTime=" + loginTime +
+                ", loginType='" + loginType + '\'' +
+                ", loginUrl='" + loginUrl + '\'' +
+                ", platform='" + platform + '\'' +
+                ", sourceIp='" + sourceIp + '\'' +
+                ", status='" + status + '\'' +
+                ", userId='" + userId + '\'' +
+                '}';
     }
 
     public String getId() {
@@ -57,7 +76,7 @@ public class InternalLoginHistory {
         return clientVersion;
     }
 
-    public Date getLoginTime() {
+    public XMLGregorianCalendar getLoginTime() {
         return loginTime;
     }
 
@@ -81,7 +100,7 @@ public class InternalLoginHistory {
         return status;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 }

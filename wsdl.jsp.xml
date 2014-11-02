@@ -3430,8 +3430,8 @@ All Rights Reserved
                         <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="Description" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="DeveloperName" nillable="true" minOccurs="0" type="xsd:string"/>
-                        <element name="LoginHistory" nillable="true" minOccurs="0" type="ens:LoginHistory"/>
-                        <element name="LoginHistoryId" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="Folder" nillable="true" minOccurs="0" type="ens:Folder"/>
+                        <element name="FolderId" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="IsBodySearchable" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="IsInternalUseOnly" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -3620,8 +3620,8 @@ All Rights Reserved
                         <element name="Description" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="DeveloperName" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Encoding" nillable="true" minOccurs="0" type="xsd:string"/>
-                        <element name="LoginHistory" nillable="true" minOccurs="0" type="ens:LoginHistory"/>
-                        <element name="LoginHistoryId" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="Folder" nillable="true" minOccurs="0" type="ens:Folder"/>
+                        <element name="FolderId" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="HtmlValue" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsActive" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="LastModifiedBy" nillable="true" minOccurs="0" type="ens:User"/>
@@ -4019,7 +4019,7 @@ All Rights Reserved
                 </complexContent>
             </complexType>
 
-            <complexType name="LoginHistory">
+            <complexType name="Folder">
                 <complexContent>
                     <extension base="ens:sObject">
                         <sequence>
@@ -8028,7 +8028,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-            
             <simpleType name="QueryLocator">
                 <restriction base="xsd:string"/>
             </simpleType>
@@ -8042,8 +8041,6 @@ All Rights Reserved
                     <element name="size"         type="xsd:int"/>
                 </sequence>
             </complexType>
-
-
 
             <!-- Search Result -->
             <complexType name="SearchResult">
@@ -8104,13 +8101,11 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
             <complexType name="GetServerTimestampResult">
                 <sequence>
                     <element name="timestamp" type="xsd:dateTime"/>
                 </sequence>
             </complexType>
-
 
             <!-- InvalidateSessions Result -->
             <complexType name="InvalidateSessionsResult">
@@ -8168,7 +8163,6 @@ All Rights Reserved
                     <element name="userInfo"         type="tns:GetUserInfoResult" minOccurs="0"/>
                 </sequence>
             </complexType>
-
 
             <simpleType name="StatusCode">
                 <restriction base="xsd:string">
@@ -8400,7 +8394,6 @@ All Rights Reserved
                 </restriction>
             </simpleType>
 
-
             <complexType name="Error">
                 <sequence>
                     <element name="fields"     type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
@@ -8435,7 +8428,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
             <complexType name="PerformQuickActionResult">
                 <sequence>
                     <element name="contextId" type="tns:ID" minOccurs="0" nillable="true"/>
@@ -8447,7 +8439,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
             <complexType name="QuickActionTemplateResult">
                 <sequence>
                     <element name="defaultValueFormulas"  type="ens:sObject" nillable="true"/>
@@ -8456,7 +8447,6 @@ All Rights Reserved
                     <element name="success"               type="xsd:boolean"/>
                 </sequence>
             </complexType>
-
 
             <complexType name="MergeRequest">
                 <sequence>
@@ -8506,14 +8496,12 @@ All Rights Reserved
                 </complexContent>
             </complexType>
 
-
             <complexType name="PerformQuickActionRequest">
                 <sequence>
                     <element name="contextId"      type="tns:ID" nillable="true"/>                    <element name="quickActionName"  type="xsd:string"/>
                     <element name="records"       type="ens:sObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
                 </sequence>
             </complexType>
-
 
             <complexType name="DescribeAvailableQuickActionResult">
                 <sequence>
@@ -8522,7 +8510,6 @@ All Rights Reserved
                     <element name="type"         type="xsd:string"/>
                 </sequence>
             </complexType>
-
 
             <complexType name="DescribeQuickActionResult">
                 <sequence>
@@ -8555,8 +8542,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
-
             <simpleType name="ShareAccessLevel">
                 <restriction base="xsd:string">
                     <enumeration value="Read"/>
@@ -8564,9 +8549,6 @@ All Rights Reserved
                     <enumeration value="All"/>
                 </restriction>
             </simpleType>
-
-
-
 
             <complexType name="ProcessResult">
                 <sequence>
@@ -8579,10 +8561,6 @@ All Rights Reserved
                     <element name="success"         type="xsd:boolean"/>
                 </sequence>
             </complexType>
-
-
-
-
 
             <complexType name="DeleteResult">
                 <sequence>
@@ -8713,7 +8691,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
             <complexType name="DescribeGlobalTheme">
                 <sequence>
                     <element name="global"       type="tns:DescribeGlobalResult"/>
@@ -8721,8 +8698,7 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
-        <simpleType name="fieldType">
+            <simpleType name="fieldType">
                 <restriction base="xsd:string">
                     <enumeration value="string"/>
                     <enumeration value="picklist"/>
@@ -8877,7 +8853,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
             <complexType name="KnowledgeSettings">
                    <sequence>
                        <element name="defaultLanguage"  type="xsd:string" minOccurs="0" />
@@ -8892,10 +8867,6 @@ All Rights Reserved
                        <element name="name" type="xsd:string" />
                    </sequence>
             </complexType>
-
-
-
-
 
             <complexType name="DescribeFlexiPageResult">
                 <sequence>
@@ -8930,7 +8901,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
             <complexType name="DescribeAppMenuResult">
                 <sequence>
                     <element name="appMenuItems"    type="tns:DescribeAppMenuItem" minOccurs="0" maxOccurs="unbounded"/>
@@ -8948,8 +8918,6 @@ All Rights Reserved
                     <element name="url"             type="xsd:string"/>
                 </sequence>
             </complexType>
-
-
 
             <complexType name="DescribeThemeResult">
                 <sequence>
@@ -9010,7 +8978,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
             <complexType name="DescribeCompactLayoutsResult">
                 <sequence>
                     <element name="compactLayouts" type="tns:DescribeCompactLayout" maxOccurs="unbounded"/>
@@ -9041,8 +9008,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
-
             <complexType name="DescribeApprovalLayoutResult">
                 <sequence>
                     <element name="approvalLayouts" type="tns:DescribeApprovalLayout" minOccurs="0" maxOccurs="unbounded"/>
@@ -9057,7 +9022,6 @@ All Rights Reserved
                     <element name="name" type="xsd:string"/>
                 </sequence>
             </complexType>
-
 
             <complexType name="DescribeLayoutResult">
                 <sequence>
@@ -9077,17 +9041,13 @@ All Rights Reserved
 
                     <element name="id"                   type="tns:ID" nillable="true"/>
 
-
-
                     <element name="quickActionList"             type="tns:DescribeQuickActionListResult" minOccurs="0" />
-
 
                     <element name="relatedContent"                type="tns:RelatedContent" minOccurs="0" maxOccurs="1"/>
 
                     <element name="relatedLists"                type="tns:RelatedList" minOccurs="0" maxOccurs="unbounded"/>
                 </sequence>
             </complexType>
-
 
             <complexType name="DescribeQuickActionListResult">
                 <sequence>
@@ -9179,7 +9139,6 @@ All Rights Reserved
                 </restriction>
             </simpleType>
 
-
             <complexType name="DescribeLayoutButton">
                 <sequence>
                  
@@ -9250,7 +9209,6 @@ All Rights Reserved
                 </restriction>
             </simpleType>
 
-
             <complexType name="FieldLayoutComponent">
                 <complexContent>
                     <extension base="tns:DescribeLayoutComponent">
@@ -9287,7 +9245,6 @@ All Rights Reserved
                     </extension>
                 </complexContent>
             </complexType>
-
 
             <simpleType name="ReportChartSize">
                 <restriction base="xsd:string">
@@ -9330,7 +9287,6 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
-
              <complexType name="RelatedContent">
                 <sequence>
                     <element name="relatedContentItems"         type="tns:DescribeRelatedContentItem" maxOccurs="unbounded"/>
@@ -9342,7 +9298,6 @@ All Rights Reserved
                     <element name="describeLayoutItem"         type="tns:DescribeLayoutItem" maxOccurs="1"/>
                 </sequence>
             </complexType>
-
 
             <complexType name="RelatedList">
                 <sequence>
@@ -9375,8 +9330,6 @@ All Rights Reserved
                     <element name="column"          type="xsd:string"/>
                 </sequence>
             </complexType>
-
-
 
             <complexType name="EmailFileAttachment">
                 <sequence>
@@ -9450,8 +9403,6 @@ All Rights Reserved
                     <element name="success"             type="xsd:boolean" />
                 </sequence>
             </complexType>
-
-
 
             <complexType name="ListViewColumn">
                 <sequence>
@@ -9629,8 +9580,6 @@ All Rights Reserved
                 </complexContent>
             </complexType>
 
-
-        
             <complexType name="DescribeSearchLayoutResult">
                 <sequence>
                     
@@ -9641,9 +9590,8 @@ All Rights Reserved
                     <element name="searchColumns" type="tns:DescribeColumn" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
                 </sequence>
             </complexType>
-        
 
-                <complexType name="DescribeColumn">
+            <complexType name="DescribeColumn">
                     <sequence>
                         <element name="field" type="xsd:string" />
                         <element name="format" type="xsd:string" nillable="true"/>
@@ -9652,16 +9600,12 @@ All Rights Reserved
                     </sequence>
                 </complexType>
 
-
-
-
             <complexType name="DescribeSearchScopeOrderResult">
                 <sequence>
                     <element name="keyPrefix"       type="xsd:string" />
                     <element name="name"            type="xsd:string"/>
                 </sequence>
             </complexType>
-
 
             <complexType name="DescribeTabSetResult">
                 <sequence>
@@ -9687,38 +9631,32 @@ All Rights Reserved
                 </sequence>
             </complexType>
 
+            <complexType name="DescribeColor">
+                <sequence>
+                    <element name="color"            type="xsd:string" />
+                    <element name="context"          type="xsd:string" />
+                    <element name="theme"            type="xsd:string" />
+                </sequence>
+            </complexType>
 
-        <complexType name="DescribeColor">
-            <sequence>
-                <element name="color"            type="xsd:string" />
-                <element name="context"          type="xsd:string" />
-                <element name="theme"            type="xsd:string" />
-            </sequence>
-        </complexType>
+            <complexType name="DescribeIcon">
+                <sequence>
+                    <element name="contentType"     type="xsd:string" />
+                    <element name="height"          type="xsd:int" nillable="true"/>
+                    <element name="theme"           type="xsd:string" />
+                    <element name="url"             type="xsd:string" />
+                    <element name="width"           type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
 
-
-
-        <complexType name="DescribeIcon">
-            <sequence>
-                <element name="contentType"     type="xsd:string" />
-                <element name="height"          type="xsd:int" nillable="true"/>
-                <element name="theme"           type="xsd:string" />
-                <element name="url"             type="xsd:string" />
-                <element name="width"           type="xsd:int" nillable="true" />
-            </sequence>
-        </complexType>
-
-		<complexType name="ActionOverride">
-			<sequence>
-				<element name="isAvailableInTouch" type="xsd:boolean"/>
-				<element name="name" type="xsd:string"/>
-				<element name="pageId" type="tns:ID"/>
-				<element name="url" type="xsd:string"/>
-			</sequence>
-		</complexType>
-
-
-
+            <complexType name="ActionOverride">
+                <sequence>
+                    <element name="isAvailableInTouch" type="xsd:boolean"/>
+                    <element name="name" type="xsd:string"/>
+                    <element name="pageId" type="tns:ID"/>
+                    <element name="url" type="xsd:string"/>
+                </sequence>
+            </complexType>
 
             <!-- Login Message Types -->
             <element name="login">
@@ -9776,46 +9714,44 @@ All Rights Reserved
                 </complexType>
             </element>
             <element name="describeGlobalResponse">
+                    <complexType>
+                        <sequence>
+                            <element name="result" type="tns:DescribeGlobalResult"/>
+                        </sequence>
+                    </complexType>
+                </element>
+
+            <!-- Describe Global Theme Types -->
+            <element name="describeGlobalTheme">
+                <complexType>
+                    <sequence/>
+                </complexType>
+            </element>
+            <element name="describeGlobalThemeResponse">
                 <complexType>
                     <sequence>
-                        <element name="result" type="tns:DescribeGlobalResult"/>
+                        <element name="result" type="tns:DescribeGlobalTheme"/>
                     </sequence>
                 </complexType>
             </element>
 
+            <!-- Describe Theme Types -->
+            <element name="describeTheme">
+                <complexType>
+                    <sequence>
+                        <element name="sobjectType" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="describeThemeResponse">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="tns:DescribeThemeResult"/>
+                    </sequence>
+                </complexType>
+            </element>
 
-        <!-- Describe Global Theme Types -->
-        <element name="describeGlobalTheme">
-            <complexType>
-                <sequence/>
-            </complexType>
-        </element>
-        <element name="describeGlobalThemeResponse">
-            <complexType>
-                <sequence>
-                    <element name="result" type="tns:DescribeGlobalTheme"/>
-                </sequence>
-            </complexType>
-        </element>
-
-        <!-- Describe Theme Types -->
-        <element name="describeTheme">
-            <complexType>
-                <sequence>
-                    <element name="sobjectType" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
-                </sequence>
-            </complexType>
-        </element>
-        <element name="describeThemeResponse">
-            <complexType>
-                <sequence>
-                    <element name="result" type="tns:DescribeThemeResult"/>
-                </sequence>
-            </complexType>
-        </element>
-
-
-        <!-- Describe Data Category Groups Message Types -->
+            <!-- Describe Data Category Groups Message Types -->
             <element name="describeDataCategoryGroups">
                 <complexType>
                     <sequence>
@@ -9846,7 +9782,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
             <!-- Describe Knowledge Settings -->
             <element name="describeKnowledgeSettings">
                 <complexType>
@@ -9860,11 +9795,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
-
-
-
-
 
             <element name="describeFlexiPages">
                 <complexType>
@@ -9881,8 +9811,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
-
             <simpleType name="AppMenuType">
                 <restriction base="xsd:string">
                     <enumeration value="AppSwitcher"/>
@@ -9890,7 +9818,6 @@ All Rights Reserved
                     <enumeration value="NetworkTabs"/>
                 </restriction>
             </simpleType>
-
 
             <element name="describeAppMenu">
                 <complexType>
@@ -9906,8 +9833,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
-
 
             <element name="describeLayout">
                 <complexType>
@@ -9926,7 +9851,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
             <element name="describeCompactLayouts">
                 <complexType>
                     <sequence>
@@ -9943,7 +9867,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
             <element name="describePrimaryCompactLayouts">
                 <complexType>
                     <sequence>
@@ -9958,7 +9881,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
 
             <element name="describeApprovalLayout">
                 <complexType>
@@ -9989,8 +9911,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
-
             <element name="describeSoqlListViews">
                 <complexType>
                     <sequence>
@@ -10020,7 +9940,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
             <element name="describeSearchLayouts">
                 <complexType>
                     <sequence>
@@ -10036,8 +9955,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
-
             <element name="describeSearchScopeOrder">
                 <complexType>
                     <sequence/>
@@ -10050,7 +9967,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
 
             <element name="describeTabs">
                 <complexType>
@@ -10065,7 +9981,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
             <element name="describeAllTabs">
                 <complexType>
                     <sequence/>
@@ -10078,7 +9993,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
 
             <!-- Create Message Types -->
             <element name="create">
@@ -10095,8 +10009,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
-
 
             <!-- Send Email Types -->
             <element name="sendEmail">
@@ -10129,7 +10041,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
 
             <!-- Update Message Types -->
             <element name="update">
@@ -10244,7 +10155,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
             <!-- Perform Action Message Types -->
             <element name="performQuickActions">
                 <complexType>
@@ -10260,7 +10170,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
 
             <element name="retrieveQuickActionTemplates">
                 <complexType>
@@ -10307,8 +10216,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
-
 
             <!-- Retrieve (ID List) Message Types -->
             <element name="retrieve">
@@ -10379,7 +10286,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
 
             <!-- Logout current session -->
             <element name="logout">
@@ -10457,8 +10363,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
-
             <!-- Create Search -->
             <element name="search">
                 <complexType>
@@ -10474,8 +10378,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
-
 
             <element name="getServerTimestamp">
                 <complexType>
@@ -10534,8 +10436,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
-
             <!-- Header Elements -->
             <element name="SessionHeader">
                 <complexType>
@@ -10554,8 +10454,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
-
             <element name="QueryOptions">
                 <complexType>
                     <sequence>
@@ -10564,7 +10462,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
 
             <simpleType name="DebugLevel">
                 <restriction base="xsd:string">
@@ -10588,14 +10485,14 @@ All Rights Reserved
                 </complexType>
             </element>
 
-   <xsd:complexType name="PackageVersion">
+            <xsd:complexType name="PackageVersion">
     <xsd:sequence>
      <xsd:element name="majorNumber" type="xsd:int"/>
      <xsd:element name="minorNumber" type="xsd:int"/>
      <xsd:element name="namespace" type="xsd:string"/>
     </xsd:sequence>
    </xsd:complexType>
-   <xsd:element name="PackageVersionHeader">
+            <xsd:element name="PackageVersionHeader">
     <xsd:complexType>
      <xsd:sequence>
       <xsd:element name="packageVersions" minOccurs="0" maxOccurs="unbounded" type="tns:PackageVersion"/>
@@ -10611,7 +10508,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
             <element name="DisableFeedTrackingHeader">
                 <complexType>
                     <sequence>
@@ -10619,8 +10515,6 @@ All Rights Reserved
                     </sequence>
                 </complexType>
             </element>
-
-
 
             <element name="StreamingEnabledHeader">
                 <complexType>
@@ -10630,9 +10524,7 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
-
-        <element name="AllOrNoneHeader">
+            <element name="AllOrNoneHeader">
             <complexType>
                 <sequence>
                     <element name="allOrNone" type="xsd:boolean" />
@@ -10640,11 +10532,7 @@ All Rights Reserved
             </complexType>
         </element>
 
-
-
-
-
-        <complexType name="LimitInfo">
+            <complexType name="LimitInfo">
             <sequence>
                 <element name="current" type="xsd:int"/>
                 <element name="limit" type="xsd:int"/>
@@ -10652,7 +10540,7 @@ All Rights Reserved
             </sequence>
         </complexType>
 
-        <element name="LimitInfoHeader">
+            <element name="LimitInfoHeader">
             <complexType>
                 <sequence>
                     <element name="limitInfo" minOccurs="0" maxOccurs="unbounded" type="tns:LimitInfo"/>
@@ -10660,32 +10548,27 @@ All Rights Reserved
             </complexType>
         </element>
 
-
-
-
-
-
             <!-- ideally this could of just been elem name="..." type="xsd:boolean"
                  but is required to be nested within a complexType for .NET 1.1 compatibility -->
-    <element name="MruHeader">
-                <complexType>
-                    <sequence>
-                        <element name="updateMru" type="xsd:boolean" />
-                    </sequence>
-                </complexType>
-    </element>
+            <element name="MruHeader">
+                        <complexType>
+                            <sequence>
+                                <element name="updateMru" type="xsd:boolean" />
+                            </sequence>
+                        </complexType>
+            </element>
 
-    <element name="EmailHeader">
-                <complexType>
-                    <sequence>
-                        <element name="triggerAutoResponseEmail"    type="xsd:boolean"/>
-                        <element name="triggerOtherEmail"           type="xsd:boolean"/>
-                        <element name="triggerUserEmail"            type="xsd:boolean"/>
-                    </sequence>
-                </complexType>
-    </element>
+            <element name="EmailHeader">
+                        <complexType>
+                            <sequence>
+                                <element name="triggerAutoResponseEmail"    type="xsd:boolean"/>
+                                <element name="triggerOtherEmail"           type="xsd:boolean"/>
+                                <element name="triggerUserEmail"            type="xsd:boolean"/>
+                            </sequence>
+                        </complexType>
+            </element>
 
-    <element name="AssignmentRuleHeader">
+            <element name="AssignmentRuleHeader">
                 <complexType>
                     <sequence>
                         <element name="assignmentRuleId"    type="tns:ID"  nillable="true" />
@@ -10702,8 +10585,6 @@ All Rights Reserved
                 </complexType>
             </element>
 
-
-
             <element name="LocaleOptions">
                 <complexType>
                     <sequence>
@@ -10715,7 +10596,7 @@ All Rights Reserved
                 </complexType>
             </element>
 
-        <element name="OwnerChangeOptions">
+            <element name="OwnerChangeOptions">
             <complexType>
                 <sequence>
                     <element name="transferAttachments" type="xsd:boolean"/>

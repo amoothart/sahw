@@ -5,6 +5,7 @@ usingApiKey: false
 ##########################
 collections:
   - name: loginHistory
+  - name: contact
 
 ##########################
 ##### Customizations #####

@@ -1,17 +1,18 @@
 package com.amooth.data_access;
 
 import com.amooth.configuration.ResultSet;
-import com.amooth.login_history.LoginHistoryCache;
-import com.amooth.login_history.LoginHistoryContext;
+import com.amooth.cache.LoginHistoryCache;
+import com.amooth.context.LoginHistoryContext;
 import com.amooth.models.InternalLoginHistory;
 import com.codahale.metrics.health.HealthCheck;
+import com.sforce.soap.enterprise.Soap;
 
 public class LoginHistoryDataAccess implements InternalDataAccess<InternalLoginHistory, LoginHistoryContext> {
     private final static LoginHistoryCache loginHistoryCache = LoginHistoryCache.getInstance();
 
     @Override
-    public ResultSet<InternalLoginHistory> getData(LoginHistoryContext context) {
-        return loginHistoryCache.getData(context);
+    public ResultSet<InternalLoginHistory> getData(LoginHistoryContext context, Soap port) {
+        return loginHistoryCache.getData(port);
     }
 
     @Override
