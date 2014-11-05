@@ -1,18 +1,18 @@
 package com.amooth.health;
 
 import com.amooth.AppConfiguration;
-import com.amooth.data_access.LoginHistoryDataAccess;
+import com.amooth.data_access.LeadDataAccess;
 import com.codahale.metrics.health.HealthCheck;
 import com.sforce.soap.enterprise.Soap;
 
-public class LoginHistoryHealthCheck extends HealthCheck {
+public class LeadHealthCheck extends HealthCheck {
 
     private AppConfiguration appConfiguration;
-    private LoginHistoryDataAccess dataAccess;
+    private LeadDataAccess dataAccess;
 
-    public LoginHistoryHealthCheck(AppConfiguration appConfiguration, Soap port) {
+    public LeadHealthCheck(AppConfiguration appConfiguration, Soap port) {
         this.appConfiguration = appConfiguration;
-        this.dataAccess = new LoginHistoryDataAccess();
+        this.dataAccess = new LeadDataAccess();
     }
 
     @Override

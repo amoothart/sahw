@@ -9,7 +9,7 @@ usingApiKey: false
 #####  Collections   #####
 ##########################
 collections:
-  - name: loginHistory
+  - name: lead
   - name: contact
 
 ##########################

@@ -1,18 +1,18 @@
 package com.amooth.context;
 
-public class LoginHistoryContext {
+public class LeadContext {
 
-    public static LoginHistoryContext createContext(String authToken) {
-        return new LoginHistoryContext(authToken);
+    public static LeadContext createContext(String authToken) {
+        return new LeadContext(authToken);
     }
 
     private String query;
 
-    public LoginHistoryContext() {
+    public LeadContext() {
         query = "";
     }
 
-    public LoginHistoryContext(String query) {
+    public LeadContext(String query) {
         query = "";
     }
 
