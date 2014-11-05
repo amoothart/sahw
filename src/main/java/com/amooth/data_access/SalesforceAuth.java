@@ -30,7 +30,7 @@ public class SalesforceAuth {
         Soap port;
         //TODO: What is the wsdl endpoint?
         try {
-            port = Service.create(new URL("file:/C:/Users/amoothart/IdeaProjects/sahw/wsdl.jsp.xml"),
+            port = Service.create(new URL("http://localhost/wsdl/kinvey-wsdl.xml"),
                     new QName("urn:enterprise.soap.sforce.com", "SforceService")).getPort(Soap.class);
         } catch (MalformedURLException e) {
             logger.error("Unable to create soap service", e);

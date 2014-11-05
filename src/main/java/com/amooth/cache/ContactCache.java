@@ -72,11 +72,13 @@ public class ContactCache {
         List<InternalContact> internalContacts = new ArrayList<InternalContact>();
         for(SObject sObject : queryResponse.getResult().getRecords()) {
             Contact contact = (Contact)sObject;
+            String description = (contact.getDescription() != null) ? contact.getDescription().getValue() : "";
+            String lastName = (contact.getLastName() != null) ? contact.getLastName().getValue() : "";
             internalContacts.add(new InternalContact(contact.getId(),
                     contact.getAccountId().getValue(),
-                    contact.getDescription().getValue(),
+                    description,
                     contact.getFirstName().getValue(),
-                    contact.getLastName().getValue()));
+                    lastName));
         }
 
         logger.info("Got " + internalContacts.size() + " InternalContacts");
