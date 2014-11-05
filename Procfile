@@ -1,1 +1,1 @@
-web: java -cp ./target/sahw-1.0-SNAPSHOT.jar com.amooth.App server config.yaml
+web: java -Ddw.server.connector.port=$PORT -cp ./target/sahw-1.0-SNAPSHOT.jar com.amooth.App server config.yaml
