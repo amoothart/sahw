@@ -1,4 +1,3 @@
-applicationName: sahw
 server:
     type: simple
     connector:
